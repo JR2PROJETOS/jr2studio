@@ -106,6 +106,16 @@ footer a{text-decoration:underline}
  .process,.pair,.facts{grid-template-columns:1fr}
  section{padding:58px 0}.contact{padding:26px}.actions .button{width:100%}
 }
+
+.lb{position:fixed;inset:0;z-index:100;background:#000000ee;display:none;align-items:center;justify-content:center;padding:24px}
+.lb.open{display:flex}
+.lb img{max-width:100%;max-height:calc(100vh - 90px);object-fit:contain;border-radius:8px;background:#fff}
+.lb .cap{position:absolute;left:0;right:0;bottom:18px;text-align:center;color:#cfd8d3;font-size:14px;padding:0 70px}
+.lb button{position:absolute;background:#ffffff1a;border:1px solid #ffffff33;color:#fff;width:46px;height:46px;border-radius:50%;font-size:22px;cursor:pointer;line-height:1}
+.lb button:hover{background:#ffffff33}
+.lb .x{top:16px;right:16px}.lb .pv{left:14px;top:50%;transform:translateY(-50%)}.lb .nx{right:14px;top:50%;transform:translateY(-50%)}
+.zoomable{cursor:zoom-in}
+@media(max-width:560px){.lb{padding:10px}.lb .pv,.lb .nx{top:auto;bottom:14px;transform:none}.lb .cap{bottom:70px;padding:0 10px}}
 </style>
 </head>
 <body>
@@ -259,6 +269,23 @@ document.getElementById('year').textContent=new Date().getFullYear();
 var menu=document.getElementById('menu'),nav=document.getElementById('navlinks');
 menu.addEventListener('click',function(){var o=nav.classList.toggle('open');menu.setAttribute('aria-expanded',o);menu.innerHTML=o?'&#10005;':'&#9776;'});
 nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.innerHTML='&#9776;'})});
+</script>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Image viewer"><button class="x" id="lbx" aria-label="Close">&#10005;</button><button class="pv" id="lbp" aria-label="Previous">&#8249;</button><img id="lbi" alt=""><button class="nx" id="lbn" aria-label="Next">&#8250;</button><div class="cap" id="lbc"></div></div>
+<script>
+(function(){
+var imgs=[].slice.call(document.querySelectorAll('.art img,.shot img,.gal img,.pair img,.studies img'));
+var lb=document.getElementById('lb'),li=document.getElementById('lbi'),lc=document.getElementById('lbc'),cur=0;
+imgs.forEach(function(im,i){im.classList.add('zoomable');im.setAttribute('tabindex','0');im.addEventListener('click',function(){show(i)});im.addEventListener('keydown',function(e){if(e.key==='Enter')show(i)})});
+function show(i){cur=(i+imgs.length)%imgs.length;var im=imgs[cur];li.src=im.src;li.alt=im.alt;var f=im.closest('figure'),c=f&&f.querySelector('figcaption');lc.textContent=(c?c.textContent:im.alt)+'  ('+(cur+1)+'/'+imgs.length+')';lb.classList.add('open');document.body.style.overflow='hidden'}
+function hide(){lb.classList.remove('open');document.body.style.overflow='';li.src=''}
+document.getElementById('lbx').onclick=hide;
+document.getElementById('lbp').onclick=function(e){e.stopPropagation();show(cur-1)};
+document.getElementById('lbn').onclick=function(e){e.stopPropagation();show(cur+1)};
+lb.addEventListener('click',function(e){if(e.target===lb)hide()});
+document.addEventListener('keydown',function(e){if(!lb.classList.contains('open'))return;if(e.key==='Escape')hide();if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1)});
+var sx=0;lb.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});
+lb.addEventListener('touchend',function(e){var dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>50)show(cur+(dx<0?1:-1))});
+})();
 </script>
 </body>
 </html>
