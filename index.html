@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JR2 Studio | Revit &amp; BIM support for architecture studios</title>
+<meta name="description" content="Remote architect with 20+ years of experience. Revit models, construction documents and presentation images for architecture studios.">
+<style>
+:root{--bg:#fafaf8;--ink:#1c1c1a;--mute:#6b6b66;--line:#e4e4de;--card:#ffffff;--accent:#2f5d50}
+@media (prefers-color-scheme:dark){:root{--bg:#141413;--ink:#eeeeea;--mute:#a1a19a;--line:#2a2a27;--card:#1c1c1a;--accent:#8fc2b2}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.brand{font-weight:700;letter-spacing:.02em}
+nav a{margin-left:20px;text-decoration:none;color:var(--mute);font-size:15px}
+nav a:hover{color:var(--ink)}
+.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center;padding:40px 0 64px}
+h1{font-size:clamp(32px,5vw,50px);line-height:1.1;margin:0 0 18px;letter-spacing:-.02em}
+.lead{color:var(--mute);font-size:19px;margin:0 0 28px}
+.btn{display:inline-block;background:var(--accent);color:#fff;padding:13px 22px;border-radius:8px;text-decoration:none;font-weight:600}
+@media (prefers-color-scheme:dark){.btn{color:#10201b}}
+.hero img{width:100%;border-radius:12px;border:1px solid var(--line)}
+.aboutgrid{display:grid;grid-template-columns:340px 1fr;gap:40px;align-items:start}
+.portrait{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+.abouttext p{margin:0 0 16px}
+.abouttext .who{font-size:20px;line-height:1.35}
+.abouttext .who span{color:var(--mute);font-size:15.5px;font-weight:400}
+.facts{list-style:none;padding:0;margin:20px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.facts li{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:15px;color:var(--mute)}
+@media (max-width:760px){.aboutgrid{grid-template-columns:1fr}.portrait{max-width:320px}.facts{grid-template-columns:1fr}}
+figure.plain{background:#fff}
+figure.plain img{height:340px;object-fit:contain;padding:12px}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);margin-left:10px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.pair span{display:block;font-size:13px;letter-spacing:.08em;color:var(--mute);margin:0 0 8px;font-weight:600}
+@media (max-width:760px){.pair{grid-template-columns:1fr}.btn.ghost{margin:12px 0 0}}
+section{padding:56px 0;border-top:1px solid var(--line)}
+h2{font-size:28px;margin:0 0 28px;letter-spacing:-.01em}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px}
+.card h3{margin:0 0 8px;font-size:18px}
+.card p{margin:0;color:var(--mute);font-size:15.5px}
+.work{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px}
+figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+figure img{width:100%;display:block}
+figcaption{padding:14px 18px;font-size:15px;color:var(--mute)}
+.note{color:var(--mute);font-size:15px;margin-top:20px}
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;padding:0;list-style:none}
+.steps li{counter-increment:s;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px}
+.steps li::before{content:counter(s);display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-weight:700;margin-bottom:10px}
+.about{max-width:720px}
+footer{border-top:1px solid var(--line);padding:32px 0 48px;color:var(--mute);font-size:15px}
+@media (max-width:760px){.hero{grid-template-columns:1fr}nav a{margin-left:14px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="brand">JR2 Studio</div>
+  <nav><a href="#services">Services</a><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+</header>
+
+<div class="hero">
+  <div>
+    <h1>Revit &amp; BIM support for architecture studios</h1>
+    <p class="lead">Construction documents, coordinated models and presentation images, from a remote architect with 20+ years of experience.</p>
+    <a class="btn" href="mailto:jair@jr2studio.com?subject=Free%20sample%20request">Request a free sample</a>
+    <a class="btn ghost" href="Jair_Vieira_Portfolio.pdf" download>Download portfolio (PDF)</a>
+  </div>
+  <img src="img/v00_capa_modelo_render.jpg" alt="Base model and AI-refined render of the same house">
+</div>
+
+<section id="services">
+  <h2>Services</h2>
+  <div class="grid">
+    <div class="card"><h3>Revit modeling &amp; clean-up</h3><p>Organized models, views and sheets that are ready to work with.</p></div>
+    <div class="card"><h3>Construction documents</h3><p>Plans, sections, elevations, details and schedules from your approved design.</p></div>
+    <div class="card"><h3>BIM coordination</h3><p>Architecture, structure and MEP, with clash review and clear notes.</p></div>
+    <div class="card"><h3>Presentation images</h3><p>Renders from your model, refined with AI for light and materials. Your design stays the same.</p></div>
+  </div>
+</section>
+
+<section id="work">
+  <h2>Selected work</h2>
+  <div class="work">
+    <figure><img src="img/v02_exterior_moderno.jpg" alt="Modern house, initial and final image" loading="lazy"><figcaption>Modern residence. Initial version and final image.</figcaption></figure>
+    <figure><img src="img/v01_exterior_classico.jpg" alt="Classic house, initial and final image" loading="lazy"><figcaption>Classic residence. Initial version and final image.</figcaption></figure>
+    <figure><img src="img/v04_sala.jpg" alt="Living room, initial and final image" loading="lazy"><figcaption>Double-height living room. Initial version and final image.</figcaption></figure>
+    <figure><img src="img/v06_cozinha.jpg" alt="Kitchen, initial and final image" loading="lazy"><figcaption>Kitchen and dining. Initial version and final image.</figcaption></figure>
+    <figure><img src="img/v05_suite.jpg" alt="Bedroom, initial and final image" loading="lazy"><figcaption>Master suite. Initial version and final image.</figcaption></figure>
+    <figure><img src="img/v03_comercial.jpg" alt="Commercial facade, initial and final image" loading="lazy"><figcaption>Commercial facade. Initial version and final image.</figcaption></figure>
+  </div>
+  <p class="note">Images are built from my base models and refined with AI tools for light and materials. The design is never changed. More Revit documentation samples are available on request.</p>
+</section>
+
+<section id="revit">
+  <h2>Revit &amp; BIM work</h2>
+  <div class="work">
+    <figure class="plain"><img src="img/rvt_tower.jpg" alt="Revit BIM model of a mixed-use high-rise" loading="lazy"><figcaption>Mixed-use high-rise. Coordinated Revit BIM model.</figcaption></figure>
+    <figure class="plain"><img src="img/rvt_leisure.jpg" alt="3D view of a leisure floor modeled in Revit" loading="lazy"><figcaption>Leisure floor. Pools, fitness and social areas in 3D.</figcaption></figure>
+    <figure class="plain"><img src="img/rvt_plan.jpg" alt="Typical floor plan sheet" loading="lazy"><figcaption>Typical floor plan. Dimensions, areas, levels and annotations.</figcaption></figure>
+    <figure class="plain"><img src="img/rvt_facade.jpg" alt="Facade elevation sheet" loading="lazy"><figcaption>Facade elevation sheet, set up from the same model.</figcaption></figure>
+  </div>
+  <p class="note">More Revit documentation and model samples are available on request.</p>
+</section>
+
+<section id="method">
+  <h2>From base model to refined render</h2>
+  <div class="pair">
+    <div><span>BASE MODEL</span><figure><img src="img/base_model.jpg" alt="Base model view" loading="lazy"></figure></div>
+    <div><span>AI-REFINED RENDER</span><figure><img src="img/render.jpg" alt="Refined render of the same design" loading="lazy"></figure></div>
+  </div>
+  <p class="note">The base model defines geometry, volumes and materials. The refinement improves light, texture and atmosphere without changing the design.</p>
+</section>
+
+<section id="process">
+  <h2>How I work</h2>
+  <ol class="steps">
+    <li><strong>You send</strong><br><span style="color:var(--mute)">Your files and what you need.</span></li>
+    <li><strong>I plan</strong><br><span style="color:var(--mute)">A short plan and a time estimate.</span></li>
+    <li><strong>I deliver</strong><br><span style="color:var(--mute)">You review, and revisions are included.</span></li>
+  </ol>
+</section>
+
+<section id="about">
+  <h2>About me</h2>
+  <div class="aboutgrid">
+    <img class="portrait" src="img/jair.jpg" alt="Jair Vieira, architect and BIM professional, at his desk" loading="lazy">
+    <div class="abouttext">
+      <p class="who"><strong>Jair Vieira</strong><br><span>Architect &amp; Urbanist | Revit &amp; BIM | Brazil, remote worldwide</span></p>
+      <p>I am an architect with 20+ years of experience in residential, commercial and mixed-use projects. I have run my own architecture practice since 2002, and I work every day in Revit, AutoCAD and SketchUp.</p>
+      <p>Before JR2 Studio, I was Director of Urban Planning for the city of Dourados, Brazil, where I reviewed architectural and technical documentation, zoning and building regulations. I also taught architecture and urbanism at the university level.</p>
+      <p>I studied Architecture and Urban Planning (UNIGRAN) and hold an MBA in Structural Engineering and Foundations (IPOG). That mix helps me read a project as an architect and as a builder.</p>
+      <p>I work remotely with architecture studios, in writing and with clear progress updates, and I can adjust my hours to U.S. time zones.</p>
+      <ul class="facts">
+        <li>20+ years in architecture</li>
+        <li>Revit, AutoCAD, SketchUp, Navisworks</li>
+        <li>Urban planning and project review experience</li>
+        <li>Remote, based in Brazil</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Send me one drawing and I will prepare a free sample view.</p>
+  <p><a class="btn" href="mailto:jair@jr2studio.com">jair@jr2studio.com</a></p>
+  <p class="note"><a href="https://www.linkedin.com/in/jair-costa">LinkedIn</a></p>
+</section>
+</div>
+<footer><div class="wrap">&copy; 2026 JR2 Studio. Architect &amp; BIM professional, Brazil (remote).</div></footer>
+</body>
+</html>
