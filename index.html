@@ -60,8 +60,6 @@ section.alt{background:#151b18}
 .gal figure{margin:0;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#000}
 .gal img{width:100%;height:100%;aspect-ratio:16/10;object-fit:cover;display:block}
 .gal .big{grid-column:span 3}
-.gal figure:last-child{grid-column:span 3}
-.gal figure:last-child img{aspect-ratio:21/9;object-fit:contain;background:#fff}
 .gal .big img{aspect-ratio:21/9}
 @media(max-width:700px){.gal{grid-template-columns:1fr}.gal .big{grid-column:auto}.gal .big img{aspect-ratio:16/10}}
 .pair{display:grid;grid-template-columns:1fr 1fr;gap:18px}
@@ -187,9 +185,12 @@ footer a{text-decoration:underline}
     <figure><img src="img/ob_clubhouse_front.jpg" alt="Clubhouse entrance" loading="lazy"></figure>
     <figure><img src="img/ob_pool_clubhouse.jpg" alt="Pool and clubhouse" loading="lazy"></figure>
     <figure><img src="img/ob_pergola.jpg" alt="Pergola, deck and pool" loading="lazy"></figure>
-    <figure><img src="img/ob_model.jpg" alt="SketchUp site model of the whole community" loading="lazy"></figure>
   </div>
-  <p class="notice">Ouro Branco: site model in SketchUp and renders in Twinmotion, created by me from my own design.</p>
+  <div class="pair" style="margin-top:16px">
+    <div><span>SKETCHUP SITE MODEL</span><img src="img/ob_model.jpg" alt="SketchUp site model of the whole community" loading="lazy"></div>
+    <div><span>REVIT MODEL, LEISURE AREA</span><img src="img/ob_revit.jpg" alt="Revit model of the leisure area, clubhouse, courts and access roads" loading="lazy"></div>
+  </div>
+  <p class="notice">Ouro Branco: site model in SketchUp, Revit model and executive drawings of the leisure area, and renders in Twinmotion, created by me from my own design.</p>
   <p class="notice">More Revit documentation and model samples for these projects are available on request.</p>
 </div></section>
 
