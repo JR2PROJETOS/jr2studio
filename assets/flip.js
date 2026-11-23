@@ -12,7 +12,7 @@
   var fs = document.getElementById("flipfs");
   var dl = document.getElementById("flipdl");
   var tabs = document.querySelectorAll("[data-book]");
-  var key = "revit", pf = null, idx = 0, lastTracked = -1, RATIO = 9 / 16, timer = null;
+  var holderEl = null, curW = 0, key = "revit", pf = null, idx = 0, lastTracked = -1, RATIO = 9 / 16, timer = null;
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   function track(name, data) {
@@ -25,8 +25,8 @@
     var padX = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight);
     var W = flip.clientWidth - padX;
     var full = !!document.fullscreenElement;
-    var spread = full && W >= 1400;
-    if (!full && W > 1040) W = 1040;
+    if (!full && W > 1400) W = 1400;
+    var spread = W >= 900;
     var H = spread ? (W * RATIO) / 2 : W * RATIO;
     if (full) {
       var availH = window.innerHeight - 130;
@@ -57,6 +57,8 @@
       holder.appendChild(d);
       els.push(d);
     }
+    holderEl = holder; curW = m.W;
+    holder.style.transition = "transform .6s ease";
     holder.style.width = m.W + "px";
     holder.style.height = m.H + "px";
     var half = Math.floor(m.W / 2);
@@ -64,7 +66,7 @@
       width: 1600, height: 900, size: "stretch",
       minWidth: m.spread ? 120 : half + 2, maxWidth: 4000, minHeight: 60, maxHeight: 4000,
       showCover: true, maxShadowOpacity: 0.55, drawShadow: true,
-      flippingTime: reduce ? 1 : 900, usePortrait: true, startPage: startIdx || 0,
+      flippingTime: reduce ? 1 : (location.search.indexOf("slow") > -1 ? 9000 : 900), usePortrait: true, startPage: startIdx || 0,
       mobileScrollSupport: false, swipeDistance: 25, showPageCorners: true, autoSize: true
     });
     pf.loadFromHTML(els);
@@ -103,6 +105,9 @@
     if (land && idx > 0 && idx + 1 < n) label = (idx + 1) + "–" + (idx + 2);
     else label = String(idx + 1);
     count.textContent = label + " / " + n;
+    var shift = 0;
+    if (land) { if (idx === 0) shift = -curW / 4; else if (n % 2 === 0 && idx >= n - 1) shift = curW / 4; }
+    if (holderEl) holderEl.style.transform = "translateX(" + shift + "px)";
     var last = land ? (n % 2 === 0 ? n - 1 : n - 2) : n - 1;
     prev.disabled = idx <= 0; next.disabled = idx >= last;
   }
