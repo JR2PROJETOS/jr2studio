@@ -70,6 +70,15 @@
       mobileScrollSupport: false, swipeDistance: 25, showPageCorners: true, autoSize: true
     });
     pf.loadFromHTML(els);
+    function soften() {
+      try {
+        var ps = pf.getPageCollection().getPages();
+        for (var q = 0; q < ps.length; q++) ps[q].setDensity("soft");
+      } catch (e) {}
+    }
+    soften();
+    pf.on("changeOrientation", soften);
+    pf.on("changeState", soften);
     idx = startIdx || 0;
     pf.on("flip", function (e) {
       idx = e.data; update();
