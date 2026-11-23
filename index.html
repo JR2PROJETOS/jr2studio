@@ -4,144 +4,39 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>JR2 Studio | Revit &amp; BIM Production Support</title>
-<meta name="description" content="JR2 Studio provides remote Revit modeling, BIM coordination and construction documentation for architecture firms, with U.S. time-zone overlap.">
+<meta name="description" content="Remote Revit modeling, construction documentation, BIM coordination and 3D visualization for architecture firms, with U.S. time-zone overlap.">
+<link rel="canonical" href="https://jr2studio.com/">
+<meta property="og:type" content="website">
 <meta property="og:title" content="JR2 Studio | Revit &amp; BIM Production Support">
-<meta property="og:description" content="Remote Revit modeling, construction documentation and BIM coordination for architecture firms.">
+<meta property="og:description" content="Remote Revit modeling, construction documentation, BIM coordination and 3D visualization for architecture firms, with U.S. time-zone overlap.">
+<meta property="og:url" content="https://jr2studio.com/">
 <meta property="og:image" content="https://jr2studio.com/img/rvt_tower.jpg">
-<style>
-:root{--bg:#101413;--panel:#1b2220;--line:#34423d;--text:#f4f7f4;--muted:#aab7b0;--mint:#9bd3be;--max:1160px}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-a{color:inherit;text-decoration:none}
-.wrap{width:min(var(--max),calc(100% - 44px));margin:auto}
-header{position:sticky;top:0;z-index:10;background:#101413eb;backdrop-filter:blur(16px);border-bottom:1px solid #ffffff12}
-.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:22px}
-.brand{font-size:22px;font-weight:800;letter-spacing:-.6px}.brand span{color:var(--mint)}
-.navlinks{display:flex;gap:26px;align-items:center;font-size:14px;color:#c3ccc7}
-.navlinks a:hover{color:var(--mint)}
-.button{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;border-radius:10px;background:var(--mint);color:#10211b;font-weight:750;border:1px solid var(--mint);cursor:pointer;font-size:15px}
-.button:hover{background:#b4e7d2}
-.button.ghost{background:transparent;color:var(--text);border-color:#52635a}
-.button.ghost:hover{background:#ffffff0c}
-.small{padding:10px 16px;font-size:13px}
-.mobiletoggle{display:none;background:transparent;color:#fff;border:0;font-size:26px;cursor:pointer}
-.hero{padding:80px 0 60px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
-.eyebrow{color:var(--mint);text-transform:uppercase;letter-spacing:2.2px;font-size:12px;font-weight:800}
-h1{font-size:clamp(38px,5.2vw,66px);line-height:1.08;letter-spacing:-2.4px;margin:18px 0 22px}
-h1 em{color:var(--mint);font-style:normal}
-h2{font-size:clamp(28px,3.4vw,40px);letter-spacing:-1.4px;line-height:1.15;margin:12px 0 16px}
-h3{font-size:19px;line-height:1.3;margin:10px 0}
-.lead{font-size:19px;color:var(--muted);max-width:580px}
-.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-.micro{font-size:13px;color:#92a39a;margin-top:22px}
-.art{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;box-shadow:0 26px 70px #0007}
-.art img{display:block;width:100%;height:auto}
-.artfoot{padding:14px 18px;display:flex;gap:8px;flex-wrap:wrap;background:#15211d}
-.tag{display:inline-block;border:1px solid #486156;background:#ffffff09;color:#d6e7de;padding:4px 10px;border-radius:50px;font-size:11.5px;margin:3px 3px 3px 0}
-.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:26px 0 56px;border-bottom:1px solid var(--line)}
-.metric strong{font-size:26px;display:block;letter-spacing:-.5px}
-.metric span{color:var(--muted);font-size:13px}
-section{padding:80px 0}
-section.alt{background:#151b18}
-.section-intro{max-width:700px;color:var(--muted);margin-bottom:30px}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
-.card{padding:26px;border-radius:15px;background:var(--panel);border:1px solid var(--line)}
-.card .number{color:var(--mint);font-size:12.5px;font-weight:800;letter-spacing:.5px}
-.card p{color:var(--muted);font-size:14.5px;margin:0 0 10px}
-.card ul{color:#cbd5ce;padding-left:19px;font-size:14px;margin:8px 0 0}
-.card li{margin:7px 0}
-.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin-top:26px}
-.shot{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:0}
-.shot img{width:100%;height:300px;object-fit:contain;padding:10px;display:block}
-.sheetfig img{height:auto;max-height:720px;object-fit:contain;padding:10px}
-.shot figcaption{padding:12px 16px;font-size:14px;color:#47524d;background:#f1f4f2}
-.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
-.gal figure{margin:0;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#000}
-.gal img{width:100%;height:100%;aspect-ratio:16/10;object-fit:cover;display:block}
-.gal .big{grid-column:span 3}
-.gal .big img{aspect-ratio:21/9}
-@media(max-width:700px){.gal{grid-template-columns:1fr}.gal .big{grid-column:auto}.gal .big img{aspect-ratio:16/10}}
-.pair{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.pair span{display:block;font-size:12.5px;letter-spacing:.08em;color:var(--muted);margin:0 0 8px;font-weight:700}
-.pair img{width:100%;border-radius:12px;display:block;background:#fff}
-.studies{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px;margin-top:30px}
-.studies figure{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}
-.studies img{width:100%;display:block;background:#fff}
-.studies figcaption{padding:12px 16px;font-size:14px;color:var(--muted)}
-.notice{font-size:13px;color:#a6b8ac;margin-top:18px}
-.process{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
-.step{padding:20px;border-top:2px solid var(--mint);background:#ffffff06}
-.step b{color:var(--mint);font-size:12px}
-.step p{font-size:14px;color:var(--muted);margin:0}
-.aboutgrid{display:grid;grid-template-columns:340px 1fr;gap:44px;align-items:start}
-.portrait{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:16px;border:1px solid var(--line)}
-.abouttext p{margin:0 0 15px;color:#d3dcd6}
-.abouttext .who{font-size:20px;line-height:1.35;color:var(--text)}
-.abouttext .who span{color:var(--muted);font-size:15px;font-weight:400}
-.facts{list-style:none;padding:0;margin:20px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.facts li{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:14.5px;color:var(--muted)}
-.contact{background:linear-gradient(135deg,#263c33,#18231f);border:1px solid #476556;border-radius:20px;padding:46px;display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center}
-.contact p{color:#c7d6cc}
-.contactlinks{display:grid;gap:12px}
-.lightnote{color:#a6b8ac;font-size:13px}
-footer{border-top:1px solid var(--line);padding:26px 0 36px;color:#9aaba1;font-size:14px}
-footer a{text-decoration:underline}
-.footerline{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
-#services,#work,#visual,#about,#contact{scroll-margin-top:80px}
-@media(max-width:850px){
- .hero-grid,.aboutgrid,.contact{grid-template-columns:1fr}
- .hero{padding:56px 0 30px}.hero-grid{gap:34px}
- .process{grid-template-columns:1fr 1fr}
- .navlinks{display:none;position:absolute;left:0;right:0;top:72px;background:#151c19;padding:20px 24px;flex-direction:column;align-items:stretch;border-bottom:1px solid var(--line)}
- .navlinks.open{display:flex}.mobiletoggle{display:block}.desktopcta{display:none}
- .portrait{max-width:320px}
-}
-@media(max-width:560px){
- .wrap{width:min(var(--max),calc(100% - 32px))}
- h1{font-size:38px;letter-spacing:-1.6px}.lead{font-size:17px}
- .metrics{gap:10px}.metric strong{font-size:19px}.metric span{font-size:11px}
- .process,.pair,.facts{grid-template-columns:1fr}
- section{padding:58px 0}.contact{padding:26px}.actions .button{width:100%}
-}
-
-.lb{position:fixed;inset:0;z-index:100;background:#000000ee;display:none;align-items:center;justify-content:center;padding:24px}
-.lb.open{display:flex}
-.lb img{max-width:100%;max-height:calc(100vh - 90px);object-fit:contain;border-radius:8px;background:#fff}
-.lb .cap{position:absolute;left:0;right:0;bottom:18px;text-align:center;color:#cfd8d3;font-size:14px;padding:0 70px}
-.lb button{position:absolute;background:#ffffff1a;border:1px solid #ffffff33;color:#fff;width:46px;height:46px;border-radius:50%;font-size:22px;cursor:pointer;line-height:1}
-.lb button:hover{background:#ffffff33}
-.lb .x{top:16px;right:16px}.lb .pv{left:14px;top:50%;transform:translateY(-50%)}.lb .nx{right:14px;top:50%;transform:translateY(-50%)}
-.zoomable{cursor:zoom-in}
-@media(max-width:560px){.lb{padding:10px}.lb .pv,.lb .nx{top:auto;bottom:14px;transform:none}.lb .cap{bottom:70px;padding:0 10px}}
-</style>
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
 <header><div class="wrap nav">
-  <a href="#top" class="brand">JR2<span> Studio</span></a>
+  <a href="/" class="brand">JR2<span> Studio</span></a>
   <nav class="navlinks" id="navlinks">
-    <a href="#services">Services</a><a href="#work">Projects</a><a href="#visual">Visualization</a><a href="#about">About</a><a href="#contact">Contact</a>
+    <a href="/revit-cad/">Revit &amp; CAD</a><a href="/visualization/">Visualization</a><a href="/#about">About</a><a href="#contact">Contact</a>
   </nav>
-  <a class="button small desktopcta" href="mailto:jair@jr2studio.com?subject=Project%20Inquiry%20-%20JR2%20Studio">Discuss a Project</a>
+  <a class="btn small desktopcta" href="mailto:jair@jr2studio.com?subject=Project%20Inquiry%20-%20JR2%20Studio">Request a quote</a>
   <button class="mobiletoggle" id="menu" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
 </div></header>
-
 <main id="top">
 <div class="wrap">
   <div class="hero"><div class="hero-grid">
     <div>
       <div class="eyebrow">Remote architectural production partner</div>
       <h1>More Revit capacity. <em>Less production bottleneck.</em></h1>
-      <p class="lead">Revit modeling, construction documentation and BIM coordination support for architecture firms. Experienced, detail-oriented production help, with hours that overlap U.S. time zones.</p>
+      <p class="lead">Revit modeling, construction documentation and BIM coordination for architecture firms, plus 3D visualization from your model. Hours that overlap U.S. time zones.</p>
       <div class="actions">
-        <a class="button" href="mailto:jair@jr2studio.com?subject=Revit%20Production%20Support%20Inquiry&body=Hello%20Jair%2C%0A%0AWe%20need%20support%20with%3A%0AProject%20type%3A%0ATimeline%3A%0A%0A">Discuss Your Project</a>
-        <a class="button ghost" href="Jair_Vieira_Portfolio.pdf" download>Download portfolio (PDF)</a>
+        <a class="btn" href="mailto:jair@jr2studio.com?subject=Revit%20Production%20Support%20Inquiry&body=Hello%20Jair%2C%0A%0AWe%20need%20support%20with%3A%0AProject%20type%3A%0ATimeline%3A%0A%0A">Discuss your project</a>
+        <a class="btn ghost" href="/Jair_Vieira_Portfolio.pdf" download>Download portfolio (PDF)</a>
       </div>
       <p class="micro">20+ years in architecture &middot; Revit / AutoCAD / Navisworks &middot; Based in Brazil &middot; Remote worldwide</p>
     </div>
     <div class="art">
-      <img src="img/rvt_tower.jpg" alt="Revit BIM model of a mixed-use high-rise">
+      <img class="zoom" src="/img/rvt_tower.jpg" alt="Revit BIM model of a mixed-use high-rise" >
       <div class="artfoot"><span class="tag">Revit BIM model</span><span class="tag">Mixed-use high-rise</span><span class="tag">Meridian</span></div>
     </div>
   </div></div>
@@ -153,106 +48,45 @@ footer a{text-decoration:underline}
 </div>
 
 <section id="services"><div class="wrap">
-  <div class="eyebrow">What I do</div>
-  <h2>Production support when your team needs it.</h2>
-  <p class="section-intro">Flexible, project-based support for architecture practices that need reliable technical output without growing their in-house production team.</p>
-  <div class="cards">
-    <article class="card"><div class="number">01 / MODELING</div><h3>Revit Modeling</h3><p>Build or update organized architectural models from existing drawings, surveys, sketches or design references.</p><ul><li>Existing conditions and as-built models</li><li>Architectural model development</li><li>Model clean-up and updates</li></ul></article>
-    <article class="card"><div class="number">02 / DOCUMENTATION</div><h3>Construction Documentation</h3><p>Drawing production, sheet setup and coordinated architectural documentation under your firm's direction.</p><ul><li>Plans, sections and elevations</li><li>Details and drawing revisions</li><li>Redlines and sheet organization</li></ul></article>
-    <article class="card"><div class="number">03 / COORDINATION</div><h3>BIM Coordination Support</h3><p>Help teams find model conflicts and keep architectural information coordinated with consultants.</p><ul><li>Architectural, structural and MEP review</li><li>Model federation and checks</li><li>Issue tracking and revisions</li></ul></article>
-    <article class="card"><div class="number">04 / PRESENTATION</div><h3>Presentation Images</h3><p>Renders from your model, refined with AI for light and materials. The design stays the same.</p><ul><li>Exterior and interior views</li><li>Built from your Revit or SketchUp model</li><li>Revisions included</li></ul></article>
+  <div class="eyebrow">Two services</div>
+  <h2>Pick what you need.</h2>
+  <p class="intro">Production support for architecture practices, and presentation images built from your model.</p>
+  <div class="svc">
+    <article class="card">
+      <div class="number">01 / REVIT AND CAD</div>
+      <h3>Revit modeling and construction documents</h3>
+      <p>Models, sheet sets, redlines, as-built conditions and BIM coordination, under your firm's direction.</p>
+      <div class="thumbs">
+        <img src="/img/rvt_tower.jpg" alt="Revit tower model" loading="lazy">
+        <img src="/img/ob_sheet.jpg" alt="Site plan sheet" loading="lazy">
+        <img src="/img/ob_sections.jpg" alt="Building sections sheet" loading="lazy">
+      </div>
+      <a class="more" href="/revit-cad/">Explore Revit and CAD &rarr;</a>
+    </article>
+    <article class="card">
+      <div class="number">02 / 3D VISUALIZATION</div>
+      <h3>Architectural renders from your model</h3>
+      <p>Twinmotion renders and AI-refined images, for communities, buildings and interiors. Your design stays the same.</p>
+      <div class="thumbs">
+        <img src="/img/cur_masterplan.jpg" alt="Aerial view of a townhouse community" loading="lazy">
+        <img src="/img/render.jpg" alt="Refined render" loading="lazy">
+        <img src="/img/ga_facade_day.jpg" alt="Commercial gallery render" loading="lazy">
+      </div>
+      <a class="more" href="/visualization/">Explore Visualization &rarr;</a>
+    </article>
   </div>
+  <p class="notice">Structural and MEP detailing support is also available on request, under your engineer's responsibility.</p>
 </div></section>
 
-<section id="work" class="alt"><div class="wrap">
-  <div class="eyebrow">Selected experience</div>
+<section id="projects" class="alt"><div class="wrap">
+  <div class="eyebrow">Selected projects</div>
   <h2>Technical work, not just beautiful images.</h2>
-  <p class="section-intro">Projects I designed, modeled or coordinated.</p>
-  <div class="cards">
-    <article class="card"><h3>Meridian</h3><p>Mixed-use high-rise. BIM modeling, construction documentation and multidisciplinary coordination.</p><span class="tag">Mixed-use</span><span class="tag">Revit / BIM</span><span class="tag">Documentation</span></article>
-    <article class="card"><h3>Ouro Branco</h3><p>Gated residential community: gatehouse, clubhouse, pools, playground and sports courts. I did the architectural design, Revit modeling, executive drawings and complementary projects (structural, electrical, plumbing), plus Twinmotion visualization.</p><span class="tag">Residential community</span><span class="tag">Coordination</span><span class="tag">Structure / MEP</span></article>
-    <article class="card"><h3>Curitiba Residências Premium</h3><p>Townhouse community with leisure area: sand court, playground, gazebo with barbecue, pergolas and gatehouse. I did the modeling in Revit, the Twinmotion renders, the executive drawings and the complementary projects: structure in Eberick and installations in QiBuilder.</p><span class="tag">Townhouses</span><span class="tag">Revit + Twinmotion</span><span class="tag">Structure (Eberick)</span><span class="tag">MEP (QiBuilder)</span></article>
-    <article class="card"><h3>Galeria América</h3><p>Commercial gallery with a steel pergola, floor-to-ceiling glazing and a stone sign wall. I designed the building and made the 3D model and the renders.</p><span class="tag">Commercial</span><span class="tag">Architectural design</span><span class="tag">3D model + renders</span></article>  </div>
-  <h3 style="margin-top:44px">Meridian: model and documentation samples</h3>
-  <div class="shots">
-    <figure class="shot"><img src="img/rvt_leisure.jpg" alt="3D view of a leisure floor modeled in Revit" loading="lazy"><figcaption>Leisure floor. Pools, fitness and social areas in 3D.</figcaption></figure>
-    <figure class="shot"><img src="img/rvt_plan.jpg" alt="Typical floor plan sheet" loading="lazy"><figcaption>Typical floor plan. Dimensions, areas, levels and annotations.</figcaption></figure>
-    <figure class="shot"><img src="img/rvt_facade.jpg" alt="Facade elevation sheet" loading="lazy"><figcaption>Facade elevation sheet, set up from the same model.</figcaption></figure>
-  </div>
-  <h3 style="margin-top:44px">Ouro Branco Residence: gated community, SketchUp model and Twinmotion renders</h3>
-  <div class="gal">
-    <figure class="big"><img src="img/ob_sign.jpg" alt="Ouro Branco Residence entrance sign and gatehouse" loading="lazy"></figure>
-    <figure><img src="img/ob_gate_front.jpg" alt="Gatehouse with access control" loading="lazy"></figure>
-    <figure><img src="img/ob_plan_aerial.jpg" alt="Top view of the leisure area: pools, playground, courts and clubhouse" loading="lazy"></figure>
-    <figure><img src="img/ob_courts_aerial.jpg" alt="Aerial view of the sports courts, pools and clubhouse" loading="lazy"></figure>
-    <figure><img src="img/ob_clubhouse_front.jpg" alt="Clubhouse entrance" loading="lazy"></figure>
-    <figure><img src="img/ob_pool_clubhouse.jpg" alt="Pool and clubhouse" loading="lazy"></figure>
-    <figure><img src="img/ob_pergola.jpg" alt="Pergola, deck and pool" loading="lazy"></figure>
-  </div>
-  <div class="pair" style="margin-top:16px">
-    <div><span>SKETCHUP SITE MODEL</span><img src="img/ob_model.jpg" alt="SketchUp site model of the whole community" loading="lazy"></div>
-    <div><span>REVIT MODEL, LEISURE AREA</span><img src="img/ob_revit.jpg" alt="Revit model of the leisure area, clubhouse, courts and access roads" loading="lazy"></div>
-  </div>
-  <figure class="shot sheetfig" style="margin-top:16px"><img src="img/ob_sheet.jpg" alt="Site plan sheet of the leisure area with area legend and accessible ramp details" loading="lazy"><figcaption>Site plan sheet (implantação), from the Revit model of the leisure area: area legend, area table and accessible ramp details.</figcaption></figure>
-  <figure class="shot sheetfig" style="margin-top:16px"><img src="img/ob_sections.jpg" alt="Building sections of the clubhouse: office and party hall" loading="lazy"><figcaption>Building sections (cortes) of the clubhouse, from the Revit model: levels, finishes, areas and steel facade elements.</figcaption></figure>
-  <p class="notice">Ouro Branco: design, SketchUp and Revit models, executive drawings and Twinmotion renders, all created by me.</p>
-  <h3 style="margin-top:44px">Curitiba Residências Premium: townhouse community, Revit model and Twinmotion renders</h3>
-  <div class="gal">
-    <figure class="big"><img src="img/cur_masterplan.jpg" alt="Aerial view of the whole townhouse community" loading="lazy"></figure>
-    <figure><img src="img/cur_leisure_aerial.jpg" alt="Aerial view of the leisure area with sand court" loading="lazy"></figure>
-    <figure><img src="img/cur_townhouses.jpg" alt="Townhouse facades with front gardens" loading="lazy"></figure>
-    <figure><img src="img/cur_townhouse_close.jpg" alt="Close view of two townhouses" loading="lazy"></figure>
-    <figure><img src="img/cur_row.jpg" alt="Row of townhouses" loading="lazy"></figure>
-    <figure><img src="img/cur_street.jpg" alt="Community street with townhouses" loading="lazy"></figure>
-    <figure><img src="img/cur_entrance.jpg" alt="Entrance building with community sign" loading="lazy"></figure>
-    <figure><img src="img/cur_sign.jpg" alt="Community sign in stone" loading="lazy"></figure>
-    <figure><img src="img/cur_gazebo.jpg" alt="Gazebo with barbecue and tables" loading="lazy"></figure>
-    <figure><img src="img/cur_playground.jpg" alt="Playground" loading="lazy"></figure>
-    <figure><img src="img/cur_court.jpg" alt="Sand court seen from above" loading="lazy"></figure>
-    <figure><img src="img/cur_clubhouse.jpg" alt="Clubhouse with the community logo" loading="lazy"></figure>
-    <figure><img src="img/cur_pergola.jpg" alt="Pergola and walking path" loading="lazy"></figure>
-  </div>
-  <p class="notice">Curitiba Residências Premium: Revit model, Twinmotion renders, executive drawings and complementary projects (structure in Eberick, installations in QiBuilder), all created by me.</p>
-  <h3 style="margin-top:44px">Galeria América: commercial gallery, design, 3D model and renders</h3>
-  <div class="gal">
-    <figure class="big"><img src="img/ga_facade_day.jpg" alt="Commercial gallery facade in daylight with steel pergola and stone sign wall" loading="lazy"></figure>
-    <figure><img src="img/ga_wide_street.jpg" alt="Wide view of the commercial gallery from the street" loading="lazy"></figure>
-    <figure><img src="img/ga_pergola_detail.jpg" alt="Pergola and glazing detail" loading="lazy"></figure>
-    <figure><img src="img/ga_stone_sign_night.jpg" alt="Stone sign wall with lighting at dusk" loading="lazy"></figure>
-    <figure><img src="img/ga_entrance_lights.jpg" alt="Entrance with wall lighting" loading="lazy"></figure>
-    <figure><img src="img/ga_side_view.jpg" alt="Long side view of the glazed facade" loading="lazy"></figure>
-  </div>
-  <p class="notice">Galeria América: architectural design, 3D model and renders, all created by me.</p>
-  <p class="notice">More Revit documentation and model samples for these projects are available on request.</p>
-</div></section>
-
-<section id="visual"><div class="wrap">
-  <div class="eyebrow">Presentation images</div>
-  <h2>From base model to refined render.</h2>
-  <p class="section-intro">The base model defines geometry, volumes and materials. The refinement improves light, texture and atmosphere without changing the design. AI tools are part of my process, and I always say so.</p>
-  <div class="pair">
-    <div><span>BASE MODEL</span><img src="img/base_model.jpg" alt="Base model view" loading="lazy"></div>
-    <div><span>AI-REFINED RENDER</span><img src="img/render.jpg" alt="Refined render of the same design" loading="lazy"></div>
-  </div>
-  <div class="studies">
-    <figure><img src="img/v02_exterior_moderno.jpg" alt="Modern house, initial and final image" loading="lazy"><figcaption>Modern residence. Initial version and final image.</figcaption></figure>
-    <figure><img src="img/v01_exterior_classico.jpg" alt="Classic house, initial and final image" loading="lazy"><figcaption>Classic residence. Initial version and final image.</figcaption></figure>
-    <figure><img src="img/v04_sala.jpg" alt="Living room, initial and final image" loading="lazy"><figcaption>Double-height living room. Initial version and final image.</figcaption></figure>
-    <figure><img src="img/v06_cozinha.jpg" alt="Kitchen, initial and final image" loading="lazy"><figcaption>Kitchen and dining. Initial version and final image.</figcaption></figure>
-    <figure><img src="img/v05_suite.jpg" alt="Bedroom, initial and final image" loading="lazy"><figcaption>Master suite. Initial version and final image.</figcaption></figure>
-    <figure><img src="img/v03_comercial.jpg" alt="Commercial facade, initial and final image" loading="lazy"><figcaption>Commercial facade. Initial version and final image.</figcaption></figure>
-  </div>
-  <p class="notice">Images are built from my base models and refined with AI tools for light and materials. The design is never changed.</p>
-</div></section>
-
-<section id="process" class="alt"><div class="wrap">
-  <div class="eyebrow">Simple collaboration</div>
-  <h2>From your brief to dependable deliverables.</h2>
-  <div class="process">
-    <div class="step"><b>STEP 01</b><h3>Share the scope</h3><p>Send drawings, project requirements, software version and deadline.</p></div>
-    <div class="step"><b>STEP 02</b><h3>Agree on deliverables</h3><p>Confirm outputs, schedule, revisions and fixed-fee or hourly terms.</p></div>
-    <div class="step"><b>STEP 03</b><h3>Production and updates</h3><p>Receive progress updates and review checkpoints.</p></div>
-    <div class="step"><b>STEP 04</b><h3>Review and handoff</h3><p>Review the work and receive the agreed files and documentation.</p></div>
+  <p class="intro">Projects I designed, modeled, documented and rendered.</p>
+  <div class="projects">
+    <a class="proj" href="/revit-cad/#meridian"><img src="/img/rvt_leisure.jpg" alt="Meridian leisure floor in Revit" loading="lazy"><div><b>Meridian</b><span>Mixed-use high-rise. Revit model and documentation.</span></div></a>
+    <a class="proj" href="/revit-cad/#ouro-branco"><img src="/img/ob_revit.jpg" alt="Ouro Branco Revit model" loading="lazy"><div><b>Ouro Branco Residence</b><span>Gated community. Design, Revit model, executive drawings, renders.</span></div></a>
+    <a class="proj" href="/visualization/#curitiba"><img src="/img/cur_townhouses.jpg" alt="Curitiba townhouses" loading="lazy"><div><b>Curitiba Residências Premium</b><span>Townhouse community. Revit, Twinmotion, structure and MEP.</span></div></a>
+    <a class="proj" href="/visualization/#galeria"><img src="/img/ga_stone_sign_night.jpg" alt="Galeria América stone sign" loading="lazy"><div><b>Galeria América</b><span>Commercial gallery. Design, 3D model and renders.</span></div></a>
   </div>
 </div></section>
 
@@ -260,7 +94,7 @@ footer a{text-decoration:underline}
   <div class="eyebrow">The person behind JR2 Studio</div>
   <h2>Architectural experience meets hands-on BIM production.</h2>
   <div class="aboutgrid">
-    <img class="portrait" src="img/jair.jpg" alt="Jair Vieira, architect and BIM professional, at his desk" loading="lazy">
+    <img class="portrait" src="/img/jair.jpg" alt="Jair Vieira, architect and BIM professional, at his desk" loading="lazy">
     <div class="abouttext">
       <p class="who"><strong>Jair Vieira</strong><br><span>Architect &amp; Urbanist | Revit &amp; BIM | Brazil, remote worldwide</span></p>
       <p>I am a Brazilian architect with 20+ years of experience in residential, commercial and mixed-use projects. Since 2002 I have run my own architecture practice, combining design, technical documentation and multidisciplinary coordination.</p>
@@ -273,7 +107,7 @@ footer a{text-decoration:underline}
         <li>Urban planning and project review experience</li>
         <li>Remote, based in Brazil</li>
       </ul>
-      <p style="margin-top:20px"><a class="button ghost small" href="https://www.linkedin.com/in/jair-costa/" target="_blank" rel="noopener">Connect on LinkedIn</a></p>
+      <p style="margin-top:20px"><a class="btn ghost small" href="https://www.linkedin.com/in/jair-costa/" target="_blank" rel="noopener">Connect on LinkedIn</a></p>
     </div>
   </div>
 </div></section>
@@ -286,40 +120,17 @@ footer a{text-decoration:underline}
     <p class="lightnote">Project-based support &middot; Ongoing collaboration &middot; U.S. time-zone overlap</p>
   </div>
   <div class="contactlinks">
-    <a class="button" href="mailto:jair@jr2studio.com?subject=JR2%20Studio%20Project%20Inquiry">Email a Project Brief</a>
-    <a class="button ghost" href="Jair_Vieira_Portfolio.pdf" download>Download portfolio (PDF)</a>
+    <a class="btn" href="mailto:jair@jr2studio.com?subject=JR2%20Studio%20Project%20Inquiry">Email a project brief</a>
+    <a class="btn ghost" href="/Jair_Vieira_Portfolio.pdf" download>Download portfolio (PDF)</a>
     <span class="lightnote">jair@jr2studio.com</span>
   </div>
 </div></div></section>
 </main>
-
 <footer><div class="wrap footerline">
   <span>&copy; <span id="year">2026</span> JR2 Studio &middot; Revit &amp; BIM Production Support</span>
-  <span>Email: <a href="mailto:jair@jr2studio.com">jair@jr2studio.com</a> &nbsp;|&nbsp; <a href="https://www.linkedin.com/in/jair-costa/" target="_blank" rel="noopener">LinkedIn</a> &nbsp;|&nbsp; <a href="https://email.secureserver.net/" rel="noopener" target="_blank">Webmail</a></span>
+  <span>Email: <a href="mailto:jair@jr2studio.com">jair@jr2studio.com</a> &nbsp;|&nbsp; <a href="https://www.linkedin.com/in/jair-costa/" target="_blank" rel="noopener">LinkedIn</a> &nbsp;|&nbsp; <a href="/revit-cad/">Revit &amp; CAD</a> &nbsp;|&nbsp; <a href="/visualization/">Visualization</a></span>
 </div></footer>
-<script>
-document.getElementById('year').textContent=new Date().getFullYear();
-var menu=document.getElementById('menu'),nav=document.getElementById('navlinks');
-menu.addEventListener('click',function(){var o=nav.classList.toggle('open');menu.setAttribute('aria-expanded',o);menu.innerHTML=o?'&#10005;':'&#9776;'});
-nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.innerHTML='&#9776;'})});
-</script>
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Image viewer"><button class="x" id="lbx" aria-label="Close">&#10005;</button><button class="pv" id="lbp" aria-label="Previous">&#8249;</button><img id="lbi" alt=""><button class="nx" id="lbn" aria-label="Next">&#8250;</button><div class="cap" id="lbc"></div></div>
-<script>
-(function(){
-var imgs=[].slice.call(document.querySelectorAll('.art img,.shot img,.gal img,.pair img,.studies img'));
-var lb=document.getElementById('lb'),li=document.getElementById('lbi'),lc=document.getElementById('lbc'),cur=0;
-imgs.forEach(function(im,i){im.classList.add('zoomable');im.setAttribute('tabindex','0');im.addEventListener('click',function(){show(i)});im.addEventListener('keydown',function(e){if(e.key==='Enter')show(i)})});
-function big(u){return u.replace('/img/','/img/large/')}
-function show(i){cur=(i+imgs.length)%imgs.length;var im=imgs[cur];li.src=im.src;li.alt=im.alt;var want=cur,L=big(im.src);if(L!==im.src){var pre=new Image();pre.onload=function(){if(want===cur&&lb.classList.contains('open')){li.src=L}};pre.src=L}var f=im.closest('figure'),c=f&&f.querySelector('figcaption');lc.textContent=(c?c.textContent:im.alt)+'  ('+(cur+1)+'/'+imgs.length+')';lb.classList.add('open');document.body.style.overflow='hidden'}
-function hide(){lb.classList.remove('open');document.body.style.overflow='';li.src=''}
-document.getElementById('lbx').onclick=hide;
-document.getElementById('lbp').onclick=function(e){e.stopPropagation();show(cur-1)};
-document.getElementById('lbn').onclick=function(e){e.stopPropagation();show(cur+1)};
-lb.addEventListener('click',function(e){if(e.target===lb)hide()});
-document.addEventListener('keydown',function(e){if(!lb.classList.contains('open'))return;if(e.key==='Escape')hide();if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1)});
-var sx=0;lb.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});
-lb.addEventListener('touchend',function(e){var dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>50)show(cur+(dx<0?1:-1))});
-})();
-</script>
+<script src="/assets/site.js"></script>
 </body>
 </html>
