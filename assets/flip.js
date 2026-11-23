@@ -12,7 +12,7 @@
   var fs = document.getElementById("flipfs");
   var dl = document.getElementById("flipdl");
   var tabs = document.querySelectorAll("[data-book]");
-  var holderEl = null, curW = 0, key = "revit", pf = null, idx = 0, lastTracked = -1, RATIO = 9 / 16, timer = null;
+  var fsOn = false, holderEl = null, curW = 0, key = "revit", pf = null, idx = 0, lastTracked = -1, RATIO = 9 / 16, timer = null;
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   function track(name, data) {
@@ -24,12 +24,12 @@
     var cs = getComputedStyle(flip);
     var padX = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight);
     var W = flip.clientWidth - padX;
-    var full = !!document.fullscreenElement;
-    if (!full && W > 1400) W = 1400;
+    var full = fsOn;
+    if (!full && W > 1700) W = 1700;
     var spread = W >= 900;
     var H = spread ? (W * RATIO) / 2 : W * RATIO;
     if (full) {
-      var availH = window.innerHeight - 130;
+      var availH = window.innerHeight - 110;
       if (H > availH) { H = availH; W = spread ? (H * 2) / RATIO : H / RATIO; }
     }
     return { W: Math.floor(W), H: Math.floor(H), spread: spread };
@@ -128,10 +128,19 @@
     if (e.key === "ArrowRight" || e.key === "PageDown") { pf.flipNext("top"); e.preventDefault(); }
     if (e.key === "ArrowLeft" || e.key === "PageUp") { pf.flipPrev("top"); e.preventDefault(); }
   });
-  fs.addEventListener("click", function () {
-    if (document.fullscreenElement) document.exitFullscreen();
-    else if (flip.requestFullscreen) flip.requestFullscreen();
-  });
+  function setFull(on) {
+    fsOn = on;
+    flip.classList.toggle("isfull", on);
+    document.body.style.overflow = on ? "hidden" : "";
+    fs.textContent = on ? "✕ Exit full screen" : "⛶ Full screen";
+    fs.setAttribute("aria-label", on ? "Exit full screen" : "Full screen");
+    flip.focus();
+    clearTimeout(timer);
+    timer = setTimeout(function () { build(key, idx); }, 60);
+  }
+  fs.textContent = "⛶ Full screen";
+  fs.addEventListener("click", function () { setFull(!fsOn); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && fsOn) setFull(false); });
   tabs.forEach(function (t) {
     t.addEventListener("click", function () {
       var k = t.getAttribute("data-book");
@@ -143,7 +152,6 @@
     timer = setTimeout(function () { build(key, idx); }, 220);
   }
   window.addEventListener("resize", relayout);
-  document.addEventListener("fullscreenchange", relayout);
   var q = (location.hash || "").replace("#", "");
   build(books[q] ? q : "revit", 0);
 })();
