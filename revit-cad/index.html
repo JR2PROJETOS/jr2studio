@@ -15,7 +15,7 @@
 </head>
 <body>
 <header><div class="wrap nav">
-  <a href="/" class="brand">JR2<span> Studio</span></a>
+  <a href="/" class="brand"><span class="mark">J&sup2;</span>JR2<span> Studio</span></a>
   <nav class="navlinks" id="navlinks">
     <a href="/revit-cad/" class="cur">Revit &amp; CAD</a><a href="/visualization/">Visualization</a><a href="/#about">About</a><a href="#contact">Contact</a>
   </nav>
@@ -52,7 +52,7 @@
   <p class="intro">Real models and sheets from projects I designed and documented. Click any image to enlarge it.</p>
   <div class="prj" id="meridian">
   <h3>Meridian: mixed-use high-rise</h3>
-  <p class="sub">Revit model and construction documentation for a residential tower with a leisure podium.</p>
+  <p class="sub">20 floors, approx. 20,069 m&sup2;. Revit model and construction documentation for a residential tower with a leisure podium.</p>
   <div class="gal "><figure class="big"><img class="zoom" src="/img/rvt_tower.jpg" alt="Revit BIM model of the Meridian high-rise" loading="lazy"></figure><figure><img class="zoom" src="/img/rvt_leisure.jpg" alt="3D view of the leisure floor modeled in Revit" loading="lazy"></figure></div>
   <figure class="sheet"><img class="zoom" src="/img/rvt_plan.jpg" alt="Typical floor plan sheet" loading="lazy"><figcaption>Typical floor plan: dimensions, areas, levels and annotations, from the Revit model.</figcaption></figure>
   <figure class="sheet"><img class="zoom" src="/img/rvt_facade.jpg" alt="Facade elevation sheet" loading="lazy"><figcaption>Facade elevation sheet, set up from the same model.</figcaption></figure>
@@ -75,14 +75,15 @@
   <p class="notice">More Revit documentation and model samples are available on request.</p>
 </div></section>
 
-<section><div class="wrap">
-  <div class="eyebrow">What you receive</div>
-  <h2>Files your team can use.</h2>
-  <div class="cards">
-    <article class="card"><h3>Editable files</h3><p>Revit (RVT), CAD (DWG) and print-ready PDF sets.</p></article>
-    <article class="card"><h3>Your standards</h3><p>Your template, title block and drawing conventions.</p></article>
-    <article class="card"><h3>Version control</h3><p>Revit version and file naming agreed at kickoff.</p></article>
+<section class="proof"><div class="wrap proof-layout">
+  <div>
+    <div class="eyebrow">Production ready</div>
+    <h2>Files that fit into your workflow.</h2>
+    <p class="intro">Models and drawings are produced using agreed project requirements, your firm's templates, naming conventions and review process.</p>
+    <ul class="checks"><li>Editable Revit models and CAD drawings (RVT, DWG, PDF)</li><li>Organized views, sheets and documentation</li><li>Revisions and coordination checkpoints</li><li>Consistent handoff under your project lead</li></ul>
+    <p style="margin-top:22px"><a class="btn" href="/Revit-CAD-Portfolio.pdf" download>Download Revit and CAD portfolio (PDF)</a></p>
   </div>
+  <figure class="sheet" style="margin:0"><img class="zoom" src="/img/rvt_plan.jpg" alt="Typical floor plan sheet created from a Revit model" loading="lazy"><figcaption>A real sheet from a Revit model: dimensions, areas, levels and annotations.</figcaption></figure>
 </div></section>
 
 <section id="process" class="alt"><div class="wrap">
@@ -102,12 +103,18 @@
     <h2>Need Revit production help?</h2>
     <p>Send one drawing, and I will prepare a free sample view. Or tell me the project stage, the Revit version and your deadline.</p>
     <p class="lightnote">Project-based support &middot; Ongoing collaboration &middot; U.S. time-zone overlap</p>
+    <p style="margin:18px 0 6px"><a class="mlink" href="mailto:jair@jr2studio.com">jair@jr2studio.com</a></p>
+    <p style="margin:14px 0 0"><a class="btn ghost" href="/Revit-CAD-Portfolio.pdf" download>Revit and CAD portfolio (PDF)</a></p>
   </div>
-  <div class="contactlinks">
-    <a class="btn" href="mailto:jair@jr2studio.com?subject=Revit%20Support%20Request">Request Revit support</a>
-    <a class="btn ghost" href="/Revit-CAD-Portfolio.pdf" download>Revit and CAD portfolio (PDF)</a>
-    <span class="lightnote">jair@jr2studio.com</span>
-  </div>
+  <form class="cform" id="inquiry" data-email="jair@jr2studio.com" data-subject="Revit Support Request">
+    <div class="field"><label for="name">Your name *</label><input id="name" name="name" required autocomplete="name" placeholder="Jane Smith"></div>
+    <div class="field"><label for="email">Work email *</label><input id="email" name="email" type="email" required autocomplete="email" placeholder="jane@firm.com"></div>
+    <div class="field"><label for="service">Service needed</label><select id="service" name="service"><option selected>Revit Modeling</option><option>Construction Documentation</option><option>BIM Coordination</option><option>CAD to Revit</option><option>3D Visualization</option><option>Other / Not sure</option></select></div>
+    <div class="field"><label for="timeline">Target deadline</label><input id="timeline" name="timeline" placeholder="e.g. 3 weeks"></div>
+    <div class="field full"><label for="details">Project scope *</label><textarea id="details" name="details" required placeholder="Project type, location, model availability, deliverables, Revit version..."></textarea></div>
+    <div class="field full"><button type="submit" class="btn">Request Revit support</button></div>
+    <p class="fnote">This opens your email app with the request filled in. Nothing is stored on this website.</p>
+  </form>
 </div></div></section>
 </main>
 <footer><div class="wrap footerline">

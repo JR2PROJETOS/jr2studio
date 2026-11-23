@@ -15,7 +15,7 @@
 </head>
 <body>
 <header><div class="wrap nav">
-  <a href="/" class="brand">JR2<span> Studio</span></a>
+  <a href="/" class="brand"><span class="mark">J&sup2;</span>JR2<span> Studio</span></a>
   <nav class="navlinks" id="navlinks">
     <a href="/revit-cad/">Revit &amp; CAD</a><a href="/visualization/" class="cur">Visualization</a><a href="/#about">About</a><a href="#contact">Contact</a>
   </nav>
@@ -72,12 +72,16 @@
     <div><span>AI-REFINED RENDER</span><img class="zoom" src="/img/render.jpg" alt="Refined render of the same design" loading="lazy"></div>
   </div>
   <div class="gal "><figure><img class="zoom" src="/img/v02_exterior_moderno.jpg" alt="Modern house, initial and final image" loading="lazy"><figcaption>Modern residence. Initial version and final image.</figcaption></figure><figure><img class="zoom" src="/img/v01_exterior_classico.jpg" alt="Classic house, initial and final image" loading="lazy"><figcaption>Classic residence. Initial version and final image.</figcaption></figure><figure><img class="zoom" src="/img/v04_sala.jpg" alt="Living room, initial and final image" loading="lazy"><figcaption>Double-height living room. Initial version and final image.</figcaption></figure><figure><img class="zoom" src="/img/v06_cozinha.jpg" alt="Kitchen, initial and final image" loading="lazy"><figcaption>Kitchen and dining. Initial version and final image.</figcaption></figure><figure><img class="zoom" src="/img/v05_suite.jpg" alt="Bedroom, initial and final image" loading="lazy"><figcaption>Master suite. Initial version and final image.</figcaption></figure><figure><img class="zoom" src="/img/v03_comercial.jpg" alt="Commercial facade, initial and final image" loading="lazy"><figcaption>Commercial facade. Initial version and final image.</figcaption></figure></div>
-  <h3 style="margin-top:40px">Same view, day and night</h3>
-  <p class="intro" style="margin-bottom:0">Day and night versions of the same view. Both images are refined with AI.</p>
-  <div class="pair">
-    <div><span>DAY</span><img class="zoom" src="/img/ai_entrance_day.jpg" alt="Residence entrance in daylight with stone pillar, wood slats and palm tree" loading="lazy"></div>
-    <div><span>NIGHT</span><img class="zoom" src="/img/ai_entrance_night.jpg" alt="The same residence entrance at night with wall lights and lit steps" loading="lazy"></div>
+  <h3 style="margin-top:40px" id="day-night">Residential entrance study: base model, day and night</h3>
+  <p class="intro" style="margin-bottom:0">The base is a SketchUp model. The day and night images are refined with AI from the same design.</p>
+  <div class="trio">
+    <div><span>SKETCHUP MODEL</span><img class="zoom" src="/img/sk_entrance_base.jpg" alt="SketchUp model of the residence entrance" loading="lazy"></div>
+    <div><span>DAY, AI-REFINED</span><img class="zoom" src="/img/ai_entrance_day.jpg" alt="Residence entrance in daylight with stone pillar, wood slats and palm tree" loading="lazy"></div>
+    <div><span>NIGHT, AI-REFINED</span><img class="zoom" src="/img/ai_entrance_night.jpg" alt="The same residence entrance at night with wall lights and lit steps" loading="lazy"></div>
   </div>
+  <h3 style="margin-top:40px">Galeria América: dusk image</h3>
+  <p class="intro" style="margin-bottom:0">A dusk version of the commercial gallery, refined with AI.</p>
+  <div class="gal"><figure class="big"><img class="zoom" src="/img/ga_dusk_ai.jpg" alt="Galeria América commercial gallery at dusk, refined with AI" loading="lazy"></figure></div>
   <p class="notice">These images are built from my base models and refined with AI tools for light and materials. The design is never changed.</p>
 </div></section>
 
@@ -98,12 +102,18 @@
     <h2>Need renders from your model?</h2>
     <p>Send a model or a sketch, and I will prepare a free sample image. Or tell me the project type, how many images you need and your deadline.</p>
     <p class="lightnote">Project-based support &middot; Ongoing collaboration &middot; U.S. time-zone overlap</p>
+    <p style="margin:18px 0 6px"><a class="mlink" href="mailto:jair@jr2studio.com">jair@jr2studio.com</a></p>
+    <p style="margin:14px 0 0"><a class="btn ghost" href="/Visualization-Portfolio.pdf" download>Visualization portfolio (PDF)</a></p>
   </div>
-  <div class="contactlinks">
-    <a class="btn" href="mailto:jair@jr2studio.com?subject=Rendering%20Quote%20Request">Request a rendering quote</a>
-    <a class="btn ghost" href="/Visualization-Portfolio.pdf" download>Visualization portfolio (PDF)</a>
-    <span class="lightnote">jair@jr2studio.com</span>
-  </div>
+  <form class="cform" id="inquiry" data-email="jair@jr2studio.com" data-subject="Rendering Quote Request">
+    <div class="field"><label for="name">Your name *</label><input id="name" name="name" required autocomplete="name" placeholder="Jane Smith"></div>
+    <div class="field"><label for="email">Work email *</label><input id="email" name="email" type="email" required autocomplete="email" placeholder="jane@firm.com"></div>
+    <div class="field"><label for="service">Service needed</label><select id="service" name="service"><option>Revit Modeling</option><option>Construction Documentation</option><option>BIM Coordination</option><option>CAD to Revit</option><option selected>3D Visualization</option><option>Other / Not sure</option></select></div>
+    <div class="field"><label for="timeline">Target deadline</label><input id="timeline" name="timeline" placeholder="e.g. 3 weeks"></div>
+    <div class="field full"><label for="details">Project scope *</label><textarea id="details" name="details" required placeholder="Project type, location, model availability, deliverables, Revit version..."></textarea></div>
+    <div class="field full"><button type="submit" class="btn">Request a rendering quote</button></div>
+    <p class="fnote">This opens your email app with the request filled in. Nothing is stored on this website.</p>
+  </form>
 </div></div></section>
 </main>
 <footer><div class="wrap footerline">

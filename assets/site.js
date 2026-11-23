@@ -28,3 +28,13 @@ document.addEventListener('keydown',function(e){if(!lb.classList.contains('open'
 var sx=0;lb.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});
 lb.addEventListener('touchend',function(e){var dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>50)show(cur+(dx<0?1:-1))});
 })();
+(function(){
+var f=document.getElementById('inquiry');if(!f)return;
+f.addEventListener('submit',function(e){
+ e.preventDefault();
+ var g=function(n){var el=f.elements[n];return el?String(el.value||'').trim():''};
+ var body=['Name: '+g('name'),'Email: '+g('email'),'Service: '+g('service'),'Target deadline: '+(g('timeline')||'not defined'),'','Project scope:',g('details')].join('\n');
+ var subject=(f.getAttribute('data-subject')||'Project inquiry')+' - '+g('service');
+ window.location.href='mailto:'+f.getAttribute('data-email')+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+});
+})();
