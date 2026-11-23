@@ -176,3 +176,14 @@ footer a{text-decoration:underline}
 @media(max-width:850px){.proof-layout,.contact{grid-template-columns:1fr}.projects{grid-template-columns:1fr 1fr}.metrics{grid-template-columns:1fr 1fr;row-gap:22px}}
 @media(max-width:700px){.trio{grid-template-columns:1fr}.cform{grid-template-columns:1fr}}
 @media(max-width:560px){.projects{grid-template-columns:1fr}}
+.showcase{padding:84px 0 90px}
+.showcase h2{font-size:clamp(30px,4vw,48px);max-width:860px}
+.hero-shot{margin:34px 0 22px;position:relative;border-radius:20px;overflow:hidden;border:1px solid #ffffff22;box-shadow:0 30px 80px #0008;background:#000}
+.hero-shot img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
+.hero-shot figcaption{position:absolute;left:0;right:0;bottom:0;padding:48px 22px 16px;font-size:14px;color:#e8f0ec;background:linear-gradient(transparent,#000000b0)}
+.band .trio span{color:#aebfb7}
+.band .trio span b{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--mint);color:#0d221c;font-size:12px;margin-right:8px;letter-spacing:0}
+.band .trio img{border-color:#ffffff1f}
+.showcase .trio{margin-top:6px}
+.showcase .notice{margin-top:18px}
+@media(max-width:700px){.hero-shot{border-radius:14px}.hero-shot img{aspect-ratio:4/3}}
