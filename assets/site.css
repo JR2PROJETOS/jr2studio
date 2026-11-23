@@ -144,8 +144,8 @@ footer a{text-decoration:underline}
  .lb{padding:10px}.lb .pv,.lb .nx{top:auto;bottom:14px;transform:none}.lb .cap{bottom:70px;padding:0 10px}
 }
 .band .prj p.sub{color:#b9cbc2}
-.rhero.home{padding:120px 0 110px;min-height:640px}
-.rhero.home::before{background-image:url(/assets/hero-home.jpg);background-position:right center}
+.rhero.home{padding:130px 0 120px;min-height:760px}
+.rhero.home::before{background-image:url(/assets/hero-home-blend.jpg);background-size:auto 100%;background-position:calc(100% + 150px) center;background-repeat:no-repeat;transform-origin:100% 50%}
 .rhero.home h1{max-width:700px}
 .rhero.home .lead{max-width:560px}
 .rhero .micro{color:#9fb5aa}
@@ -223,3 +223,6 @@ header.scrolled .nav{height:60px}
  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
  .js .reveal{opacity:1;transform:none}
 }
+
+@media(max-width:1400px){.rhero.home::after{content:"";position:absolute;inset:0;background:rgba(13,34,28,.45);z-index:0}}
+@media(max-width:1400px){.rhero.home::before{background-image:url(/assets/hero-home.jpg);background-position:right center}}
